@@ -1,0 +1,513 @@
+{
+  "prospects": [
+    {
+      "osmId": 1767273829,
+      "osmType": "node",
+      "id": "node-1767273829",
+      "name": "Inga's Bar",
+      "businessType": "Restaurant",
+      "address": "66, Hicks Street, Brooklyn",
+      "phone": "+1-917-909-1177",
+      "whatsappUrl": "https://wa.me/19179091177",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2183039959,
+      "osmType": "node",
+      "id": "node-2183039959",
+      "name": "Raj's Indian Kitchen",
+      "businessType": "Restaurant",
+      "address": "53, Nassau Street, New York, NY, 10038",
+      "phone": "+1-646-559-2322",
+      "whatsappUrl": "https://wa.me/16465592322",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2523660980,
+      "osmType": "node",
+      "id": "node-2523660980",
+      "name": "L&B Spumoni Gardens",
+      "businessType": "Restaurant",
+      "address": "46, Old Fulton Street, 11201",
+      "phone": "+1 718-596-4646",
+      "whatsappUrl": "https://wa.me/17185964646",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": "https://www.instagram.com/lbspumonigardens"
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2547067899,
+      "osmType": "node",
+      "id": "node-2547067899",
+      "name": "Ballato",
+      "businessType": "Restaurant",
+      "address": "55, East Houston Street, 10012",
+      "phone": "+1-212-274-8881",
+      "whatsappUrl": "https://wa.me/12122748881",
+      "email": null,
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/emiliosballato/",
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2555123848,
+      "osmType": "node",
+      "id": "node-2555123848",
+      "name": "Ming Kee Kitchen",
+      "businessType": "Restaurant",
+      "address": "237B, Grand Street, 10002",
+      "phone": "+1-212-219-2282",
+      "whatsappUrl": "https://wa.me/12122192282",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2562442598,
+      "osmType": "node",
+      "id": "node-2562442598",
+      "name": "Lucia Pizza",
+      "businessType": "Restaurant",
+      "address": "375, Canal Street, New York, 10013",
+      "phone": "+1 917 965-2900",
+      "whatsappUrl": "https://wa.me/19179652900",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2563985397,
+      "osmType": "node",
+      "id": "node-2563985397",
+      "name": "Tofu Tofu",
+      "businessType": "Restaurant",
+      "address": "Address not available",
+      "phone": "+1-917-442-5001",
+      "whatsappUrl": "https://wa.me/19174425001",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2563985408,
+      "osmType": "node",
+      "id": "node-2563985408",
+      "name": "Il Cortile",
+      "businessType": "Restaurant",
+      "address": "125, Mulberry Street, 10013",
+      "phone": "+1-212-226-6060",
+      "whatsappUrl": "https://wa.me/12122266060",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2567558483,
+      "osmType": "node",
+      "id": "node-2567558483",
+      "name": "Yuki Sushi",
+      "businessType": "Restaurant",
+      "address": "37, Allen Street, 10002",
+      "phone": "+1-917-409-0429",
+      "whatsappUrl": "https://wa.me/19174090429",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2567561127,
+      "osmType": "node",
+      "id": "node-2567561127",
+      "name": "Sobak",
+      "businessType": "Restaurant",
+      "address": "51B, Canal Street, New York, NY, 10002",
+      "phone": "+1 917-265-8188",
+      "whatsappUrl": "https://wa.me/19172658188",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": "https://www.instagram.com/sobak.han/"
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2826472444,
+      "osmType": "node",
+      "id": "node-2826472444",
+      "name": "Shui Mei Cafe",
+      "businessType": "Restaurant",
+      "address": "67, East Broadway, New York, NY, 10002",
+      "phone": "+1-212-791-2819",
+      "whatsappUrl": "https://wa.me/12127912819",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 2897876736,
+      "osmType": "node",
+      "id": "node-2897876736",
+      "name": "Otani",
+      "businessType": "Restaurant",
+      "address": "59, Nassau Street, New York, NY, 10038",
+      "phone": "+1-212-732-9250",
+      "whatsappUrl": "https://wa.me/12127329250",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 3450977039,
+      "osmType": "node",
+      "id": "node-3450977039",
+      "name": "Nara Sushi",
+      "businessType": "Restaurant",
+      "address": "76, Pearl Street, New York, NY, 10004",
+      "phone": "+1-646-720-0202",
+      "whatsappUrl": "https://wa.me/16467200202",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 3573482099,
+      "osmType": "node",
+      "id": "node-3573482099",
+      "name": "Fanelli Cafe",
+      "businessType": "Restaurant",
+      "address": "Address not available",
+      "phone": "+1-212-226-9412",
+      "whatsappUrl": "https://wa.me/12122269412",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 3634267071,
+      "osmType": "node",
+      "id": "node-3634267071",
+      "name": "7 Old Fulton",
+      "businessType": "Restaurant",
+      "address": "7, Old Fulton, Brooklyn, NY, 11201",
+      "phone": "+1-718-797-0007",
+      "whatsappUrl": "https://wa.me/17187970007",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 3637093539,
+      "osmType": "node",
+      "id": "node-3637093539",
+      "name": "Stage Door Deli",
+      "businessType": "Restaurant",
+      "address": "26, Vesey Street, New York",
+      "phone": "+1-212-791-5252",
+      "whatsappUrl": "https://wa.me/12127915252",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 3737959221,
+      "osmType": "node",
+      "id": "node-3737959221",
+      "name": "St. George Tavern",
+      "businessType": "Restaurant",
+      "address": "103, Washington Street, New York, 10006",
+      "phone": "+12122409868",
+      "whatsappUrl": "https://wa.me/12122409868",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    },
+    {
+      "osmId": 3926398285,
+      "osmType": "node",
+      "id": "node-3926398285",
+      "name": "Variety Cafe",
+      "businessType": "Restaurant",
+      "address": "65, Broadway, New York, NY, 10006",
+      "phone": "+1-212-430-6888",
+      "whatsappUrl": "https://wa.me/12124306888",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass"
+    }
+  ],
+  "contacted": [
+    {
+      "osmId": 251474107,
+      "osmType": "node",
+      "id": "node-251474107",
+      "name": "Jardin des Pâtes",
+      "businessType": "Restaurant",
+      "address": "Address not available",
+      "phone": "+33 1 43 31 50 71",
+      "whatsappUrl": "https://wa.me/33143315071",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass",
+      "contactedAt": "2026-03-22T22:23:55.901Z"
+    },
+    {
+      "osmId": 251125928,
+      "osmType": "node",
+      "id": "node-251125928",
+      "name": "Le Lutétia Île Saint-Louis",
+      "businessType": "Restaurant",
+      "address": "33, Quai de Bourbon, 75004",
+      "phone": "+33 1 40 51 80 30",
+      "whatsappUrl": "https://wa.me/33140518030",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass",
+      "contactedAt": "2026-03-22T22:23:54.951Z"
+    },
+    {
+      "osmId": 247696094,
+      "osmType": "node",
+      "id": "node-247696094",
+      "name": "Les Enfants Rouges",
+      "businessType": "Restaurant",
+      "address": "Address not available",
+      "phone": "+33 1 48 87 80 61",
+      "whatsappUrl": "https://wa.me/33148878061",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass",
+      "contactedAt": "2026-03-22T22:23:54.428Z"
+    },
+    {
+      "osmId": 247455923,
+      "osmType": "node",
+      "id": "node-247455923",
+      "name": "Chez Denise",
+      "businessType": "Restaurant",
+      "address": "Address not available",
+      "phone": "+33 1 42 36 21 82",
+      "whatsappUrl": "https://wa.me/33142362182",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass",
+      "contactedAt": "2026-03-22T22:23:50.027Z"
+    },
+    {
+      "osmId": 247696090,
+      "osmType": "node",
+      "id": "node-247696090",
+      "name": "Café des Musées",
+      "businessType": "Restaurant",
+      "address": "Address not available",
+      "phone": "+33 1 42 72 96 17",
+      "whatsappUrl": "https://wa.me/33142729617",
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass",
+      "contactedAt": "2026-03-22T22:23:48.037Z"
+    },
+    {
+      "osmId": 247455916,
+      "osmType": "node",
+      "id": "node-247455916",
+      "name": "La Crypte Polska",
+      "businessType": "Restaurant",
+      "address": "Address not available",
+      "phone": null,
+      "whatsappUrl": null,
+      "email": null,
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass",
+      "contactedAt": "2026-03-22T22:13:49.955Z"
+    },
+    {
+      "osmId": 1290866489,
+      "osmType": "node",
+      "id": "node-1290866489",
+      "name": "Ciao Marcello",
+      "businessType": "Restaurant",
+      "address": "4, Rue du Lacydon, Marseille, 13002",
+      "phone": "+33 4 91 91 22 69",
+      "whatsappUrl": "https://wa.me/33491912269",
+      "email": "cafedesepices@yahoo.fr",
+      "socialLinks": {
+        "facebook": null,
+        "instagram": null
+      },
+      "location": {
+        "lat": null,
+        "lon": null
+      },
+      "source": "openstreetmap-overpass",
+      "contactedAt": "2026-03-22T22:13:46.656Z"
+    }
+  ]
+}
