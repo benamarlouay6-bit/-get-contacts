@@ -9,12 +9,18 @@ import { promisify } from "util";
 const execFileAsync = promisify(execFile);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_FILE = path.join(__dirname, "data.json");
-const SEARCH_CACHE_FILE = path.join(__dirname, "search-cache.json");
-const PORT = 3001;
+const ROOT_DIR = path.resolve(__dirname, "..");
+const CLIENT_DIST_DIR = path.join(ROOT_DIR, "client", "dist");
+const STORAGE_DIR = process.env.RENDER_DISK_ROOT
+  ? path.join(process.env.RENDER_DISK_ROOT, "get-contacts")
+  : __dirname;
+const DATA_FILE = path.join(STORAGE_DIR, "data.json");
+const SEARCH_CACHE_FILE = path.join(STORAGE_DIR, "search-cache.json");
+const PORT = Number(process.env.PORT || 3001);
 const SEARCH_LIMIT = 18;
 const PER_CITY_LIMIT = 20;
 const OVERPASS_TIMEOUT_SECONDS = 10;
+const CURL_BIN = process.platform === "win32" ? "curl.exe" : "curl";
 const OVERPASS_ENDPOINTS = [
   "https://overpass-api.de/api/interpreter",
   "https://overpass.kumi.systems/api/interpreter",
@@ -65,7 +71,13 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "1mb" }));
 
+async function ensureStorageDir() {
+  await fs.mkdir(STORAGE_DIR, { recursive: true });
+}
+
 async function ensureJsonFile(filePath, defaultValue) {
+  await ensureStorageDir();
+
   try {
     await fs.access(filePath);
   } catch {
@@ -104,6 +116,7 @@ async function writeData(data) {
     contacted: Array.isArray(data?.contacted) ? data.contacted : [],
   };
 
+  await ensureStorageDir();
   await fs.writeFile(DATA_FILE, JSON.stringify(safeData, null, 2), "utf8");
   return safeData;
 }
@@ -282,7 +295,7 @@ function summarizeCurlError(message) {
   if (message.includes("Operation timed out")) return "request timed out";
   if (message.includes("Could not resolve host")) return "could not resolve host";
   if (message.includes("Failed to connect")) return "failed to connect";
-  if (message.includes("Unexpected token '<'")) return "server returned HTML instead of JSON";
+  if (message.includes("server returned HTML instead of JSON")) return "server returned HTML instead of JSON";
   return message;
 }
 
@@ -306,7 +319,7 @@ async function fetchViaCurl(endpoint, query) {
   ];
 
   try {
-    const { stdout, stderr } = await execFileAsync("curl.exe", args, {
+    const { stdout, stderr } = await execFileAsync(CURL_BIN, args, {
       windowsHide: true,
       maxBuffer: 1024 * 1024 * 5,
     });
@@ -453,6 +466,14 @@ app.get("/api/search", async (req, res) => {
     });
   }
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(CLIENT_DIST_DIR));
+
+  app.get(/^(?!\/api).*/, (_req, res) => {
+    res.sendFile(path.join(CLIENT_DIST_DIR, "index.html"));
+  });
+}
 
 Promise.all([ensureDataFile(), ensureSearchCacheFile()]).then(() => {
   app.listen(PORT, () => {

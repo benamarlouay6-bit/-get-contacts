@@ -6,37 +6,43 @@ Prospect Finder is a solo-use business prospecting tool for freelance web develo
 
 - Frontend: React (Vite), Tailwind CSS, Axios, lucide-react
 - Backend: Node.js, Express
-- Storage: local `server/data.json`
+- Storage: local JSON files with Render persistent disk support
 - Data source: Overpass API
 
-## Features
+## Local Startup
 
-- Search by country: Tunisia, France, USA, UK, Germany
-- Search by business type: Restaurant, Barber Shop, Cafe, Gym, Beauty Salon, Auto Repair
-- Filters out businesses that already have a website in OSM
-- Shows available phone, WhatsApp, email, address, Facebook, and Instagram details
-- Move prospects into a Contacted list and restore them back when needed
-- Saves both lists to `data.json` so data survives refresh and browser close
-
-## Startup Instructions
-
-### Option 1: Start Everything From The Project Root
+### Option 1: Project Root
 
 1. `cd c:\projects\get_contacts`
 2. `npm install`
-3. `npm run install:all`
+3. `npm run build`
 4. `npm run dev`
 
-This starts:
-
-- Backend on port `3001`
-- Frontend on port `5173`
-
-Open `http://localhost:5173` in your browser.
-
-### Option 2: Start Manually In Two Terminals
+### Option 2: Two Terminals
 
 1. `cd server && npm install && node index.js`
 2. `cd client && npm install && npm run dev`
 
+Backend runs on port `3001`.
+
+Frontend runs on port `5173` in local dev.
+
 No environment variables or API keys are required.
+
+## Render Deployment
+
+Create a `Web Service` on Render with these settings:
+
+- Root Directory: leave blank
+- Build Command: `npm install && npm run build`
+- Start Command: `npm start`
+
+Add a Persistent Disk:
+
+- Mount path: `/var/data`
+- Size: any small size is fine to start
+
+Render will provide the `PORT` environment variable automatically.
+The app will use `/var/data/get-contacts` for `data.json` and `search-cache.json` when deployed.
+
+After deployment, your public site will load from the same Render URL and the API will be served from the same service.
