@@ -151,7 +151,6 @@ function App() {
     const { contactedAt, ...restored } = item;
     const nextProspects = [restored, ...prospects];
     await persistData(nextProspects, nextContacted);
-    setActiveTab("prospects");
   };
 
   const listToRender = activeTab === "prospects" ? prospects : contacted;
