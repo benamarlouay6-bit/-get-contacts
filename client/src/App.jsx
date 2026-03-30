@@ -16,7 +16,7 @@ const DEFAULT_REQUIREMENTS = {
 const DEFAULT_REGION_BY_COUNTRY = {
   Tunisia: "Tunis",
   France: "Paris",
-  USA: "New York",
+  USA: "New York, NY",
   UK: "London",
   Germany: "Berlin",
 };

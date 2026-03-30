@@ -29,29 +29,135 @@ const OVERPASS_ENDPOINTS = [
 
 const COUNTRY_CITY_MAP = {
   Tunisia: [
-    { name: "Tunis", lat: 36.8065, lon: 10.1815, radius: 1800 },
-    { name: "Sfax", lat: 34.7406, lon: 10.7603, radius: 1800 },
-    { name: "Sousse", lat: 35.8256, lon: 10.6411, radius: 1600 },
+    { name: "Ariana", lat: 36.8625, lon: 10.1956, radius: 7000 },
+    { name: "Beja", lat: 36.7256, lon: 9.1817, radius: 7000 },
+    { name: "Ben Arous", lat: 36.7531, lon: 10.2189, radius: 7000 },
+    { name: "Bizerte", lat: 37.2744, lon: 9.8739, radius: 7000 },
+    { name: "Gabes", lat: 33.8815, lon: 10.0982, radius: 7000 },
+    { name: "Gafsa", lat: 34.425, lon: 8.7842, radius: 7000 },
+    { name: "Jendouba", lat: 36.5011, lon: 8.7802, radius: 7000 },
+    { name: "Kairouan", lat: 35.6781, lon: 10.0963, radius: 7000 },
+    { name: "Kasserine", lat: 35.1676, lon: 8.8365, radius: 7000 },
+    { name: "Kebili", lat: 33.7044, lon: 8.969, radius: 7000 },
+    { name: "Kef", lat: 36.1742, lon: 8.7049, radius: 7000 },
+    { name: "Mahdia", lat: 35.5047, lon: 11.0622, radius: 7000 },
+    { name: "Manouba", lat: 36.81, lon: 10.0956, radius: 7000 },
+    { name: "Medenine", lat: 33.3549, lon: 10.5055, radius: 7000 },
+    { name: "Monastir", lat: 35.7643, lon: 10.8113, radius: 7000 },
+    { name: "Nabeul", lat: 36.4561, lon: 10.7376, radius: 7000 },
+    { name: "Sfax", lat: 34.7406, lon: 10.7603, radius: 7000 },
+    { name: "Sidi Bouzid", lat: 35.0382, lon: 9.4858, radius: 7000 },
+    { name: "Siliana", lat: 36.084, lon: 9.3708, radius: 7000 },
+    { name: "Sousse", lat: 35.8256, lon: 10.6411, radius: 7000 },
+    { name: "Tataouine", lat: 32.9297, lon: 10.4518, radius: 7000 },
+    { name: "Tozeur", lat: 33.9197, lon: 8.1335, radius: 7000 },
+    { name: "Tunis", lat: 36.8065, lon: 10.1815, radius: 7000 },
+    { name: "Zaghouan", lat: 36.4029, lon: 10.1429, radius: 7000 },
   ],
   France: [
-    { name: "Paris", lat: 48.8566, lon: 2.3522, radius: 1800 },
-    { name: "Marseille", lat: 43.2965, lon: 5.3698, radius: 1700 },
-    { name: "Lyon", lat: 45.764, lon: 4.8357, radius: 1600 },
+    { name: "Auvergne-Rhone-Alpes", lat: 45.764, lon: 4.8357, radius: 9000 },
+    { name: "Bourgogne-Franche-Comte", lat: 47.322, lon: 5.0415, radius: 9000 },
+    { name: "Brittany", lat: 48.1173, lon: -1.6778, radius: 9000 },
+    { name: "Centre-Val de Loire", lat: 47.903, lon: 1.9093, radius: 9000 },
+    { name: "Corsica", lat: 41.9192, lon: 8.7386, radius: 9000 },
+    { name: "Grand Est", lat: 48.5734, lon: 7.7521, radius: 9000 },
+    { name: "Hauts-de-France", lat: 50.6292, lon: 3.0573, radius: 9000 },
+    { name: "Ile-de-France", lat: 48.8566, lon: 2.3522, radius: 9000 },
+    { name: "Paris", lat: 48.8566, lon: 2.3522, radius: 4000 },
+    { name: "Normandy", lat: 49.4431, lon: 1.0993, radius: 9000 },
+    { name: "Nouvelle-Aquitaine", lat: 44.8378, lon: -0.5792, radius: 9000 },
+    { name: "Occitanie", lat: 43.6047, lon: 1.4442, radius: 9000 },
+    { name: "Pays de la Loire", lat: 47.2184, lon: -1.5536, radius: 9000 },
+    { name: "Provence-Alpes-Cote d'Azur", lat: 43.2965, lon: 5.3698, radius: 9000 },
+    { name: "Guadeloupe", lat: 16.241, lon: -61.533, radius: 9000 },
+    { name: "French Guiana", lat: 4.9224, lon: -52.3135, radius: 9000 },
+    { name: "Martinique", lat: 14.6104, lon: -61.08, radius: 9000 },
+    { name: "Mayotte", lat: -12.7823, lon: 45.2288, radius: 9000 },
+    { name: "Reunion", lat: -20.8821, lon: 55.4504, radius: 9000 },
   ],
   USA: [
-    { name: "New York", lat: 40.7128, lon: -74.006, radius: 1800 },
-    { name: "Los Angeles", lat: 34.0522, lon: -118.2437, radius: 1800 },
-    { name: "Chicago", lat: 41.8781, lon: -87.6298, radius: 1600 },
+    { name: "New York, NY", lat: 40.7128, lon: -74.006, radius: 7000 },
+    { name: "Los Angeles, CA", lat: 34.0522, lon: -118.2437, radius: 7000 },
+    { name: "Chicago, IL", lat: 41.8781, lon: -87.6298, radius: 7000 },
+    { name: "Houston, TX", lat: 29.7604, lon: -95.3698, radius: 7000 },
+    { name: "Phoenix, AZ", lat: 33.4484, lon: -112.074, radius: 7000 },
+    { name: "Philadelphia, PA", lat: 39.9526, lon: -75.1652, radius: 7000 },
+    { name: "San Antonio, TX", lat: 29.4241, lon: -98.4936, radius: 7000 },
+    { name: "San Diego, CA", lat: 32.7157, lon: -117.1611, radius: 7000 },
+    { name: "Dallas, TX", lat: 32.7767, lon: -96.797, radius: 7000 },
+    { name: "San Jose, CA", lat: 37.3382, lon: -121.8863, radius: 7000 },
+    { name: "Austin, TX", lat: 30.2672, lon: -97.7431, radius: 7000 },
+    { name: "Jacksonville, FL", lat: 30.3322, lon: -81.6557, radius: 7000 },
+    { name: "Fort Worth, TX", lat: 32.7555, lon: -97.3308, radius: 7000 },
+    { name: "Columbus, OH", lat: 39.9612, lon: -82.9988, radius: 7000 },
+    { name: "Charlotte, NC", lat: 35.2271, lon: -80.8431, radius: 7000 },
+    { name: "San Francisco, CA", lat: 37.7749, lon: -122.4194, radius: 7000 },
+    { name: "Indianapolis, IN", lat: 39.7684, lon: -86.1581, radius: 7000 },
+    { name: "Seattle, WA", lat: 47.6062, lon: -122.3321, radius: 7000 },
+    { name: "Denver, CO", lat: 39.7392, lon: -104.9903, radius: 7000 },
+    { name: "Washington, DC", lat: 38.9072, lon: -77.0369, radius: 7000 },
+    { name: "Boston, MA", lat: 42.3601, lon: -71.0589, radius: 7000 },
+    { name: "El Paso, TX", lat: 31.7619, lon: -106.485, radius: 7000 },
+    { name: "Nashville, TN", lat: 36.1627, lon: -86.7816, radius: 7000 },
+    { name: "Detroit, MI", lat: 42.3314, lon: -83.0458, radius: 7000 },
+    { name: "Oklahoma City, OK", lat: 35.4676, lon: -97.5164, radius: 7000 },
+    { name: "Portland, OR", lat: 45.5152, lon: -122.6784, radius: 7000 },
+    { name: "Las Vegas, NV", lat: 36.1699, lon: -115.1398, radius: 7000 },
+    { name: "Memphis, TN", lat: 35.1495, lon: -90.049, radius: 7000 },
+    { name: "Louisville, KY", lat: 38.2527, lon: -85.7585, radius: 7000 },
+    { name: "Baltimore, MD", lat: 39.2904, lon: -76.6122, radius: 7000 },
+    { name: "Milwaukee, WI", lat: 43.0389, lon: -87.9065, radius: 7000 },
+    { name: "Albuquerque, NM", lat: 35.0844, lon: -106.6504, radius: 7000 },
+    { name: "Tucson, AZ", lat: 32.2226, lon: -110.9747, radius: 7000 },
+    { name: "Fresno, CA", lat: 36.7378, lon: -119.7871, radius: 7000 },
+    { name: "Sacramento, CA", lat: 38.5816, lon: -121.4944, radius: 7000 },
+    { name: "Kansas City, MO", lat: 39.0997, lon: -94.5786, radius: 7000 },
+    { name: "Mesa, AZ", lat: 33.4152, lon: -111.8315, radius: 7000 },
+    { name: "Atlanta, GA", lat: 33.749, lon: -84.388, radius: 7000 },
+    { name: "Omaha, NE", lat: 41.2565, lon: -95.9345, radius: 7000 },
+    { name: "Colorado Springs, CO", lat: 38.8339, lon: -104.8214, radius: 7000 },
+    { name: "Raleigh, NC", lat: 35.7796, lon: -78.6382, radius: 7000 },
+    { name: "Miami, FL", lat: 25.7617, lon: -80.1918, radius: 7000 },
+    { name: "Long Beach, CA", lat: 33.7701, lon: -118.1937, radius: 7000 },
+    { name: "Virginia Beach, VA", lat: 36.8529, lon: -75.978, radius: 7000 },
+    { name: "Oakland, CA", lat: 37.8044, lon: -122.2711, radius: 7000 },
+    { name: "Minneapolis, MN", lat: 44.9778, lon: -93.265, radius: 7000 },
+    { name: "Tulsa, OK", lat: 36.154, lon: -95.9928, radius: 7000 },
+    { name: "Arlington, TX", lat: 32.7357, lon: -97.1081, radius: 7000 },
+    { name: "New Orleans, LA", lat: 29.9511, lon: -90.0715, radius: 7000 },
+    { name: "Wichita, KS", lat: 37.6872, lon: -97.3301, radius: 7000 },
   ],
   UK: [
-    { name: "London", lat: 51.5072, lon: -0.1276, radius: 1800 },
-    { name: "Birmingham", lat: 52.4862, lon: -1.8904, radius: 1600 },
-    { name: "Manchester", lat: 53.4808, lon: -2.2426, radius: 1600 },
+    { name: "East Midlands", lat: 52.9548, lon: -1.1581, radius: 9000 },
+    { name: "East of England", lat: 52.2053, lon: 0.1218, radius: 9000 },
+    { name: "London", lat: 51.5072, lon: -0.1276, radius: 9000 },
+    { name: "North East", lat: 54.9783, lon: -1.6178, radius: 9000 },
+    { name: "North West", lat: 53.4808, lon: -2.2426, radius: 9000 },
+    { name: "Northern Ireland", lat: 54.5973, lon: -5.9301, radius: 9000 },
+    { name: "Scotland", lat: 55.9533, lon: -3.1883, radius: 9000 },
+    { name: "South East", lat: 50.8198, lon: -0.1367, radius: 9000 },
+    { name: "South West", lat: 51.4545, lon: -2.5879, radius: 9000 },
+    { name: "Wales", lat: 51.4816, lon: -3.1791, radius: 9000 },
+    { name: "West Midlands", lat: 52.4862, lon: -1.8904, radius: 9000 },
+    { name: "Yorkshire and the Humber", lat: 53.8008, lon: -1.5491, radius: 9000 },
   ],
   Germany: [
-    { name: "Berlin", lat: 52.52, lon: 13.405, radius: 1800 },
-    { name: "Hamburg", lat: 53.5511, lon: 9.9937, radius: 1600 },
-    { name: "Munich", lat: 48.1351, lon: 11.582, radius: 1600 },
+    { name: "Baden-Wurttemberg", lat: 48.7758, lon: 9.1829, radius: 9000 },
+    { name: "Bavaria", lat: 48.1374, lon: 11.5755, radius: 9000 },
+    { name: "Berlin", lat: 52.52, lon: 13.405, radius: 9000 },
+    { name: "Brandenburg", lat: 52.3906, lon: 13.0645, radius: 9000 },
+    { name: "Bremen", lat: 53.0793, lon: 8.8017, radius: 9000 },
+    { name: "Hamburg", lat: 53.5511, lon: 9.9937, radius: 9000 },
+    { name: "Hesse", lat: 50.1109, lon: 8.6821, radius: 9000 },
+    { name: "Lower Saxony", lat: 52.3759, lon: 9.732, radius: 9000 },
+    { name: "Mecklenburg-Vorpommern", lat: 53.6355, lon: 11.4012, radius: 9000 },
+    { name: "North Rhine-Westphalia", lat: 51.2277, lon: 6.7735, radius: 9000 },
+    { name: "Rhineland-Palatinate", lat: 49.9929, lon: 8.2473, radius: 9000 },
+    { name: "Saarland", lat: 49.2402, lon: 6.9969, radius: 9000 },
+    { name: "Saxony", lat: 51.0504, lon: 13.7373, radius: 9000 },
+    { name: "Saxony-Anhalt", lat: 52.1205, lon: 11.6276, radius: 9000 },
+    { name: "Schleswig-Holstein", lat: 54.3233, lon: 10.1228, radius: 9000 },
+    { name: "Thuringia", lat: 50.9848, lon: 11.0299, radius: 9000 },
   ],
 };
 
@@ -133,19 +239,65 @@ async function readSearchCacheFile() {
   }
 }
 
+function parseCacheKey(cacheKey) {
+  try {
+    return JSON.parse(cacheKey);
+  } catch {
+    return null;
+  }
+}
+
 async function getCachedSearch(cacheKey) {
   if (MEMORY_SEARCH_CACHE.has(cacheKey)) {
     return MEMORY_SEARCH_CACHE.get(cacheKey);
   }
 
   const fileCache = await readSearchCacheFile();
-  const cached = fileCache[cacheKey] || null;
+  const directMatch = fileCache[cacheKey] || null;
 
-  if (cached) {
-    MEMORY_SEARCH_CACHE.set(cacheKey, cached);
+  if (directMatch) {
+    MEMORY_SEARCH_CACHE.set(cacheKey, directMatch);
+    return directMatch;
   }
 
-  return cached;
+  const requestedKey = parseCacheKey(cacheKey);
+
+  if (!requestedKey) {
+    return null;
+  }
+
+  let bestEntry = null;
+  let bestSavedAt = 0;
+
+  for (const [legacyKey, entry] of Object.entries(fileCache)) {
+    const parsedLegacyKey = parseCacheKey(legacyKey);
+
+    if (!parsedLegacyKey) {
+      continue;
+    }
+
+    const isSameSearch =
+      parsedLegacyKey.country === requestedKey.country &&
+      parsedLegacyKey.region === requestedKey.region &&
+      parsedLegacyKey.type === requestedKey.type;
+
+    if (!isSameSearch) {
+      continue;
+    }
+
+    const savedAt = Date.parse(entry?.savedAt || '') || 0;
+
+    if (!bestEntry || savedAt > bestSavedAt) {
+      bestEntry = entry;
+      bestSavedAt = savedAt;
+    }
+  }
+
+  if (bestEntry) {
+    MEMORY_SEARCH_CACHE.set(cacheKey, bestEntry);
+  }
+
+  return bestEntry;
 }
 
 async function setCachedSearch(cacheKey, results) {
@@ -158,6 +310,41 @@ async function setCachedSearch(cacheKey, results) {
   const fileCache = await readSearchCacheFile();
   fileCache[cacheKey] = entry;
   await fs.writeFile(SEARCH_CACHE_FILE, JSON.stringify(fileCache, null, 2), "utf8");
+}
+
+async function getRelatedCachedSearch(country, region, type) {
+  const fileCache = await readSearchCacheFile();
+  let bestEntry = null;
+  let bestKey = null;
+  let bestScore = -1;
+  let bestSavedAt = 0;
+
+  for (const [cacheKey, entry] of Object.entries(fileCache)) {
+    const parsedKey = parseCacheKey(cacheKey);
+
+    if (!parsedKey || parsedKey.type !== type || parsedKey.region === region) {
+      continue;
+    }
+
+    const score = parsedKey.country === country ? 2 : 1;
+    const savedAt = Date.parse(entry?.savedAt || "") || 0;
+
+    if (score > bestScore || (score === bestScore && savedAt > bestSavedAt)) {
+      bestEntry = entry;
+      bestKey = parsedKey;
+      bestScore = score;
+      bestSavedAt = savedAt;
+    }
+  }
+
+  if (!bestEntry || !bestKey) {
+    return null;
+  }
+
+  return {
+    entry: bestEntry,
+    key: bestKey,
+  };
 }
 
 function buildAddress(tags = {}) {
@@ -280,13 +467,26 @@ function passesRequirements(business, requiredFields) {
   return true;
 }
 
-function buildCacheKey(country, region, type, requiredFields, excludedIds) {
+function buildCacheKey(country, region, type, requiredFields) {
   return JSON.stringify({
     country,
     region,
     type,
     requiredFields,
-    excludedIds: [...excludedIds].sort(),
+  });
+}
+
+function filterCachedResults(results, requiredFields, excludedIds, type) {
+  return results.filter((business) => {
+    if (excludedIds.has(business.id)) {
+      return false;
+    }
+
+    if (type && business.businessType !== type) {
+      return false;
+    }
+
+    return passesRequirements(business, requiredFields);
   });
 }
 
@@ -403,7 +603,7 @@ app.get("/api/search", async (req, res) => {
   const businessConfig = BUSINESS_TYPE_MAP[type];
   const requiredFields = buildRequiredFields(req.query);
   const excludedIds = parseExcludedIds(req.query.excludeIds);
-  const cacheKey = buildCacheKey(country, region, type, requiredFields, excludedIds);
+  const cacheKey = buildCacheKey(country, region, type, requiredFields);
 
   if (!city || !businessConfig) {
     return res.status(400).json({ message: "Invalid country, region, or business type." });
@@ -437,9 +637,11 @@ app.get("/api/search", async (req, res) => {
       });
     }
 
-    if (cachedSearch?.results?.length) {
+    const cachedResults = filterCachedResults(cachedSearch?.results || [], requiredFields, excludedIds, type);
+
+    if (cachedResults.length) {
       return res.json({
-        results: cachedSearch.results,
+        results: cachedResults,
         meta: {
           source: "cache",
           cachedFallbackUsed: true,
@@ -450,6 +652,40 @@ app.get("/api/search", async (req, res) => {
     }
 
     if (isTemporaryOverpassFailure(errors)) {
+      const relatedCachedSearch = await getRelatedCachedSearch(country, region, type);
+      const relatedCachedResults = filterCachedResults(
+        relatedCachedSearch?.entry?.results || [],
+        requiredFields,
+        excludedIds,
+        type,
+      );
+
+      if (relatedCachedResults.length) {
+        return res.json({
+          results: relatedCachedResults,
+          meta: {
+            source: "related-cache",
+            cachedFallbackUsed: true,
+            savedAt: relatedCachedSearch.entry.savedAt,
+            message: `Live search is temporarily unavailable for ${region}. Showing saved ${type.toLowerCase()} leads from ${relatedCachedSearch.key.region} instead.`,
+          },
+        });
+      }
+
+      const savedData = await readData();
+      const savedProspects = filterCachedResults(savedData.prospects || [], requiredFields, excludedIds, type);
+
+      if (savedProspects.length) {
+        return res.json({
+          results: savedProspects.slice(0, SEARCH_LIMIT),
+          meta: {
+            source: "saved-prospects",
+            cachedFallbackUsed: true,
+            message: `Live search is temporarily unavailable for ${region}. Showing prospects from your saved list instead.`,
+          },
+        });
+      }
+
       return res.status(503).json({
         message: `Search is temporarily unavailable for ${region}. Please wait a little and try again.`,
       });
