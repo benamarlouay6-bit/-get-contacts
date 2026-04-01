@@ -4,6 +4,8 @@ import Tabs from "./components/Tabs";
 import BusinessCard from "./components/BusinessCard";
 import api from "./lib/api";
 
+const LOCAL_STORAGE_KEY = "get-contacts-data";
+
 const DEFAULT_REQUIREMENTS = {
   phone: false,
   whatsapp: false,
@@ -20,6 +22,39 @@ const DEFAULT_REGION_BY_COUNTRY = {
   UK: "London",
   Germany: "Berlin",
 };
+
+const EMPTY_SAVED_DATA = {
+  prospects: [],
+  contacted: [],
+};
+
+function readLocalData() {
+  try {
+    const raw = window.localStorage.getItem(LOCAL_STORAGE_KEY);
+
+    if (!raw) {
+      return EMPTY_SAVED_DATA;
+    }
+
+    const parsed = JSON.parse(raw);
+
+    return {
+      prospects: Array.isArray(parsed.prospects) ? parsed.prospects : [],
+      contacted: Array.isArray(parsed.contacted) ? parsed.contacted : [],
+    };
+  } catch {
+    return EMPTY_SAVED_DATA;
+  }
+}
+
+function writeLocalData(data) {
+  const safeData = {
+    prospects: Array.isArray(data?.prospects) ? data.prospects : [],
+    contacted: Array.isArray(data?.contacted) ? data.contacted : [],
+  };
+
+  window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(safeData));
+}
 
 function App() {
   const [country, setCountry] = useState("France");
@@ -40,12 +75,28 @@ function App() {
 
   useEffect(() => {
     const loadStoredData = async () => {
+      const localData = readLocalData();
+
+      setProspects(localData.prospects);
+      setContacted(localData.contacted);
+
       try {
         const response = await api.get("/api/data");
-        setProspects(Array.isArray(response.data.prospects) ? response.data.prospects : []);
-        setContacted(Array.isArray(response.data.contacted) ? response.data.contacted : []);
+        const serverData = {
+          prospects: Array.isArray(response.data.prospects) ? response.data.prospects : [],
+          contacted: Array.isArray(response.data.contacted) ? response.data.contacted : [],
+        };
+
+        const nextData =
+          serverData.prospects.length > 0 || serverData.contacted.length > 0 ? serverData : localData;
+
+        setProspects(nextData.prospects);
+        setContacted(nextData.contacted);
+        writeLocalData(nextData);
       } catch {
-        setError("Could not load saved prospect data.");
+        if (localData.prospects.length === 0 && localData.contacted.length === 0) {
+          setError("Could not load saved prospect data.");
+        }
       } finally {
         setBooting(false);
       }
@@ -62,11 +113,12 @@ function App() {
 
     setProspects(nextProspects);
     setContacted(nextContacted);
+    writeLocalData(payload);
 
     try {
       await api.post("/api/data", payload);
     } catch {
-      setError("Could not save your latest changes.");
+      setError("Saved in this browser, but could not sync to the server.");
     }
   };
 
