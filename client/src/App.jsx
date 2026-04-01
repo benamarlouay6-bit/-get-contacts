@@ -56,6 +56,31 @@ function writeLocalData(data) {
   window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(safeData));
 }
 
+function mergeSavedData(localData, serverData) {
+  const safeLocal = {
+    prospects: Array.isArray(localData?.prospects) ? localData.prospects : [],
+    contacted: Array.isArray(localData?.contacted) ? localData.contacted : [],
+  };
+  const safeServer = {
+    prospects: Array.isArray(serverData?.prospects) ? serverData.prospects : [],
+    contacted: Array.isArray(serverData?.contacted) ? serverData.contacted : [],
+  };
+
+  return {
+    prospects: safeLocal.prospects.length > 0 ? safeLocal.prospects : safeServer.prospects,
+    contacted: safeLocal.contacted.length > 0 ? safeLocal.contacted : safeServer.contacted,
+  };
+}
+
+function hasSameSavedData(left, right) {
+  return (
+    JSON.stringify(Array.isArray(left?.prospects) ? left.prospects : []) ===
+      JSON.stringify(Array.isArray(right?.prospects) ? right.prospects : []) &&
+    JSON.stringify(Array.isArray(left?.contacted) ? left.contacted : []) ===
+      JSON.stringify(Array.isArray(right?.contacted) ? right.contacted : [])
+  );
+}
+
 function App() {
   const [country, setCountry] = useState("France");
   const [region, setRegion] = useState("Paris");
@@ -86,13 +111,15 @@ function App() {
           prospects: Array.isArray(response.data.prospects) ? response.data.prospects : [],
           contacted: Array.isArray(response.data.contacted) ? response.data.contacted : [],
         };
-
-        const nextData =
-          serverData.prospects.length > 0 || serverData.contacted.length > 0 ? serverData : localData;
+        const nextData = mergeSavedData(localData, serverData);
 
         setProspects(nextData.prospects);
         setContacted(nextData.contacted);
         writeLocalData(nextData);
+
+        if (!hasSameSavedData(nextData, serverData)) {
+          await api.post("/api/data", nextData);
+        }
       } catch {
         if (localData.prospects.length === 0 && localData.contacted.length === 0) {
           setError("Could not load saved prospect data.");
